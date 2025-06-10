@@ -1,0 +1,18 @@
+name: Run update.sh
+
+on:
+  push:
+    branches:
+      - main  # Or your default branch
+  workflow_dispatch: # allows manual trigger
+
+jobs:
+  run-update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run update.sh
+        run: ./update.sh
